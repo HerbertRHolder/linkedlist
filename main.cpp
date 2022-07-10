@@ -9,6 +9,10 @@
 #include <iostream>
 using namespace std;
 
+// template<class T> is used to create an abstract data-type(ADT) 
+// this allows users to ctreate a list with any data-type 
+// used is c++ or user defined classes
+
 template <class T> struct Node {
   T value;
   Node<T> *next;
@@ -21,7 +25,10 @@ public:
 
 public:
   
+  // default constructor
 Linklist() { head = NULL; }
+// Overloaded Constructor 
+// user defines initial value in the list upon creation
   Linklist(t item) {
     Node<t> *node = new Node<t>;
     node->value = item;
@@ -29,6 +36,8 @@ Linklist() { head = NULL; }
     node->next = NULL;
   }
 
+  // Destructor used to destroy 
+  // the memory allocation of the list
   ~Linklist() {
     while (head != NULL) {
       Node<t> *tmp = head;
@@ -38,6 +47,7 @@ Linklist() { head = NULL; }
 
   } // linklist destructor end
 
+// size member function gets the size of the list
   int size() const {
     int count = 0;
     Node<t> *tmp = head;
@@ -52,8 +62,9 @@ Linklist() { head = NULL; }
 
   bool isEmpty() const { return head == NULL; }
 
+// first node is the head of the list
   Node<t> *firstNode() const { return head; }
-
+// Gives the last node in the linked list
   Node<t> *lastNode() const {
     if (head == NULL) {
       return NULL;
@@ -70,7 +81,8 @@ Linklist() { head = NULL; }
   } // end of function lastNode
 
   
-
+// Enter the position ypu would like to search for 
+// to get the node
   Node<t> *getNode(int pos) const {
     if (pos < 0 || head == NULL) {
       return NULL;
@@ -83,11 +95,12 @@ Linklist() { head = NULL; }
     }
     return tmp;
   } // end of getNode
-
-  Node<t> *findNode(t e) const {
+// find the node in the list with the same value in the 
+// the argument
+  Node<t> *findNode(t val) const {
     Node<t> *tmp = head;
     while (tmp != NULL) {
-      if (tmp->value == e) {
+      if (tmp->value == val) {
         return tmp;
       }
       tmp = tmp->next;
@@ -95,6 +108,7 @@ Linklist() { head = NULL; }
     return NULL;
   }
 
+// Get the value given the position
   t getvalue(int pos) {
     Node<t> *node = getNode(pos);
     if (node != NULL) {
@@ -105,23 +119,23 @@ Linklist() { head = NULL; }
 
   } // end getvalue
 
-  void setvalue(int pos, t e) {
+  // Sets the value given the position
+  void setvalue(int pos, t val) {
     Node<t> *node = getNode(pos);
     if (node != NULL) {
-      node->value = e;
+      node->value = val;
     } else {
       cout << "position does not exist" << endl;
     }
   }
-
-  void insert(int pos, t e) {
+// inserts the value given the position
+  void insert(int pos, t val) {
     Node<t> *node = new Node<t>;
-    node->value = e;
+    node->value = val;
 
     if (pos < 0 || head == NULL) {
       node->next = head;
       head = node;
-      // return 0;
     }
 
     int i = 0;
@@ -134,15 +148,13 @@ Linklist() { head = NULL; }
     node->next = tmp->next;
     tmp->next = node;
     cout << "node inserted" << endl;
-    // return i + 1;
-
   } // end insert
 
 void push(t val){
     this->insert(this->size(),val);
   }
  
-
+// Removes the whole node given the position
   t remove(int pos) {
     if (pos < 0 || head == NULL) {
       cout << "position does not exist" << endl;
@@ -180,7 +192,7 @@ void push(t val){
 
   } // end remove
 
-  void print(Linklist<t> &l) {
+  void print() {
     Node<t> *tmp = head;
     while (tmp != NULL) {
       cout << tmp->value << " ";
@@ -210,7 +222,7 @@ int main() {
 
 
 
-  list.print(list);
+  list.print();
   // cout << endl << list.getvalue(2) << endl;
 
   return 0;
