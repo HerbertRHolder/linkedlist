@@ -205,14 +205,15 @@ void push(t val){
 
 int main() {
   Linklist<string> list("I");
-
   list.insert(1,"like");
   list.insert(2, "vanilla");
   list.insert(3, "ice");
   list.insert(4, "cream");
-  // list.remove(1);
-    list.push("60");
-    list.push("dkjfvsdkjvbsdncjx");
+  list.push("and");
+  list.push("Coding");
+  cout << endl << "Here is the size of the string list: " << list.size() << endl;
+  cout << "string list contents" << list.print() << endl;
+  list.setvalue(2, "Chocolate")
 
 
   //   if (list.isEmpty()){
