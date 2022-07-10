@@ -192,6 +192,7 @@ void push(t val){
 
   } // end remove
 
+// Prints the contents of the list 
   void print() {
     Node<t> *tmp = head;
     while (tmp != NULL) {
@@ -212,19 +213,22 @@ int main() {
   list.push("and");
   list.push("Coding");
   cout << endl << "Here is the size of the string list: " << list.size() << endl;
-  cout << "string list contents" << list.print() << endl;
-  list.setvalue(2, "Chocolate")
-
-
-  //   if (list.isEmpty()){
-  // cout << endl << "true";
-  //   }else {cout<< endl << "false";}
-  // list.setvalue(2, "chocolate");
-
-
-
+  cout << "string list contents: ";
+   list.print();
+  cout << endl;
+  list.setvalue(2, "Chocolate");
+  cout << "Removed 1 item string list new contents: ";
   list.print();
-  // cout << endl << list.getvalue(2) << endl;
+  cout << endl;
+  if (list.isEmpty())
+  {cout << endl << "True or False list is empty?  true" << endl;}
+  else {cout<< endl << "True or False list is empty? false" << endl;}
+  cout << endl << "Get Value: "<< list.getvalue(2) << endl;
+  cout << "First node content: "<<list.firstNode()->value << endl;
+  cout << "Last node content: "<<list.lastNode()->value << endl;
+  cout << "Get node content: "<<list.getNode(4)->value << endl;
+  cout << "Find node address: "<<list.findNode("ice") << endl;
+
 
   return 0;
 }
