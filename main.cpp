@@ -1,3 +1,11 @@
+// This program is a demonstration of what was learned in my progrmming course 
+// DataStructures and Algorithms @ Borough of Manhattan Community College &
+// Pace University
+// This program's usage is to create a simple Data Structure known as a linked list
+// that will allow users to allocate memory (using pointers) to create an efficient 
+// way of storing DATA using minimum CPU processing, minimum RAM usage and minimum Storage usage.   
+
+
 #include <iostream>
 using namespace std;
 
@@ -60,6 +68,8 @@ Linklist() { head = NULL; }
     }
     return tmp;
   } // end of function lastNode
+
+  
 
   Node<t> *getNode(int pos) const {
     if (pos < 0 || head == NULL) {
@@ -128,25 +138,10 @@ Linklist() { head = NULL; }
 
   } // end insert
 
-  // void push(t val){
-  //    Node <t> *node = new Node<t>;
-  //   node = head;
-  //   if(head->next == NULL)
-  //   {
-  //     Node <t> *tmp = head;
-  //     tmp->value = val;
-  //     head->next = tmp;
-  //     node = tmp;
-  //     node->value = tmp->value;
-  //   }
-  //   Node <t> *tmp;
-  //   tmp = head;
-  //   head->next = tmp;
-  //   while(tmp != NULL){
-  //     tmp = tmp->next;
-  //   }
-  //     node = tmp;
-  // }
+void push(Linklist &l,t val){
+    this.insert(this.size(),val);
+  }
+ 
 
   t remove(int pos) {
     if (pos < 0 || head == NULL) {
@@ -204,11 +199,16 @@ int main() {
   list.insert(3, "ice");
   list.insert(4, "cream");
   // list.remove(1);
+    list.push("60");
+    list.push("dkjfvsdkjvbsdncjx");
+
 
   //   if (list.isEmpty()){
   // cout << endl << "true";
   //   }else {cout<< endl << "false";}
   // list.setvalue(2, "chocolate");
+
+
 
   list.print(list);
   // cout << endl << list.getvalue(2) << endl;
