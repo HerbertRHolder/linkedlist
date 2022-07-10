@@ -200,9 +200,9 @@ int main() {
   Linklist<string> list("I");
 
   list.insert(1,"like");
-  list.insert(2, "ice");
-  list.insert(3, "cream");
-  list.insert(4, "vanilla");
+  list.insert(2, "vanilla");
+  list.insert(3, "ice");
+  list.insert(4, "cream");
   // list.remove(1);
 
   //   if (list.isEmpty()){
