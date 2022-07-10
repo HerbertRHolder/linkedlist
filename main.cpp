@@ -138,8 +138,8 @@ Linklist() { head = NULL; }
 
   } // end insert
 
-void push(Linklist &l,t val){
-    this.insert(this.size(),val);
+void push(t val){
+    this->insert(this->size(),val);
   }
  
 
