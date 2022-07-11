@@ -81,7 +81,7 @@ Linklist() { head = NULL; }
   } // end of function lastNode
 
   
-// Enter the position ypu would like to search for 
+// Enter the position you would like to search for 
 // to get the node
   Node<t> *getNode(int pos) const {
     if (pos < 0 || head == NULL) {
@@ -150,6 +150,8 @@ Linklist() { head = NULL; }
     cout << "node inserted" << endl;
   } // end insert
 
+  // Creates and pushes a list item to the last position
+  // of the list
 void push(t val){
     this->insert(this->size(),val);
   }
