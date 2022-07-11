@@ -10,7 +10,7 @@
 using namespace std;
 
 // template<class T> is used to create an abstract data-type(ADT) 
-// this allows users to ctreate a list with any data-type 
+// this allows users to create a list with any data-type 
 // used is c++ or user defined classes
 
 template <class T> struct Node {
